@@ -1,10 +1,6 @@
 ### Installing Anaconda
 
-1. Download the Anaconda installer from [anaconda.com/download](https://www.anaconda.com/download):
-
-   ```bash
-   wget https://repo.anaconda.com/archive/Anaconda3-2025.12-2-Linux-x86_64.sh
-   ```
+1. Download the Anaconda installer from [anaconda.com/download](https://www.anaconda.com/download):  
 
 2. Install Anaconda on Ubuntu:
 
