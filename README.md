@@ -66,7 +66,7 @@
    http://localhost:8888/?token=abc123def456...
    ```
 
-3. If everything works, you can set up aliases to avoid typing the full command every time:
+3. If everything works, you can set up aliases to avoid typing the full command every time (optional):
 
    3.1. Open `~/.bashrc` in a text editor:
 
@@ -88,3 +88,26 @@
    ```
 
    3.3. Now you can start Jupyter by simply typing `jn` for Notebook or `jl` for JupyterLab.
+
+4. To configure Jupyter Notebook to start automatically when WSL launches (optional):
+
+   4.1. Add the following snippet to `~/.bashrc` (logs will be written to `~/jupyter.log`):
+
+   ```bash
+   # Auto-start Jupyter if not already running
+   if ! pgrep -f "jupyter-notebook" > /dev/null 2>&1; then
+       nohup jupyter notebook --no-browser --port=8888 > ~/jupyter.log 2>&1 &
+   fi
+   ```
+
+   4.2. Restart WSL to apply the changes:
+
+   ```bash
+   wsl --shutdown
+   ```
+
+   4.3. Verify that the Jupyter service is running:
+
+   ```bash
+   jupyter notebook list
+   ```
