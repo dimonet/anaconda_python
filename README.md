@@ -40,6 +40,29 @@
    conda --version
    ```
 
+### Setting the Default WSL User via wsl.conf
+
+1. Open the `wsl.conf` file for editing:
+
+   ```bash
+   nano /etc/wsl.conf
+   ```
+
+2. Add or update the following content:
+
+   ```ini
+   [user]
+   default=dion
+   ```
+
+3. Restart WSL (in PowerShell):
+
+   ```powershell
+   wsl --shutdown
+   ```
+
+4. Reopen WSL — it will now start under the `dion` user.
+
 ### Running Jupyter
 
 1. Start Jupyter from the Ubuntu (WSL) terminal:
@@ -92,9 +115,10 @@
    ```bash
    # Auto-start Jupyter if not already running
    if ! pgrep -f "jupyter-notebook" > /dev/null 2>&1; then
-       nohup jupyter notebook --no-browser --port=8888 > ~/jupyter.log 2>&1 &
+       nohup /home/dion/anaconda3/bin/jupyter notebook --no-browser --port=8888 > ~/jupyter.log 2>&1 &
    fi
    ```
+   where dion should be replaced by current user
 
    4.2. Restart WSL to apply the changes:
 
