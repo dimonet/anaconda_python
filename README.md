@@ -1,3 +1,26 @@
+### Setting the Default WSL User via wsl.conf
+
+1. Open the `wsl.conf` file for editing:
+
+   ```bash
+   nano /etc/wsl.conf
+   ```
+
+2. Add or update the following content:
+
+   ```ini
+   [user]
+   default=dion
+   ```
+
+3. Restart WSL (in PowerShell):
+
+   ```powershell
+   wsl --shutdown
+   ```
+
+4. Reopen WSL — it will now start under the `dion` user.
+
 ### Installing Anaconda
 
 1. Download the Anaconda installer from [anaconda.com/download](https://www.anaconda.com/download):  
@@ -39,29 +62,6 @@
    ```bash
    conda --version
    ```
-
-### Setting the Default WSL User via wsl.conf
-
-1. Open the `wsl.conf` file for editing:
-
-   ```bash
-   nano /etc/wsl.conf
-   ```
-
-2. Add or update the following content:
-
-   ```ini
-   [user]
-   default=dion
-   ```
-
-3. Restart WSL (in PowerShell):
-
-   ```powershell
-   wsl --shutdown
-   ```
-
-4. Reopen WSL — it will now start under the `dion` user.
 
 ### Running Jupyter
 
